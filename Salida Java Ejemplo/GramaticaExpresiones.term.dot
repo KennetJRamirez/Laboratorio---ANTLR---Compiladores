@@ -1,0 +1,23 @@
+digraph ATN {
+rankdir=LR;
+s5[fontsize=11, label="5", shape=doublecircle, fixedsize=true, width=.6];
+s32[fontsize=11,label="32", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s33[fontsize=11,label="&rarr;\n33*", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s34[fontsize=11,label="&larr;\n34", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s35[fontsize=11,label="{35*\nd=1|{<p0>|<p1>}}", shape=record, fixedsize=false, peripheries=1];
+s4[fontsize=11,label="4", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s36[fontsize=11,label="36", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s37[fontsize=11,label="37*", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s30[fontsize=11,label="30", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s31[fontsize=11,label="31", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s4 -> s30 [fontname="Times-Italic", label="&epsilon;"];
+s30 -> s35 [fontsize=11, fontname="Courier", arrowsize=.7, label = "<factor>", arrowhead = normal];
+s35:p0 -> s33 [fontname="Times-Italic", label="&epsilon;"];
+s35:p1 -> s36 [fontname="Times-Italic", label="&epsilon;"];
+s33 -> s31 [fontname="Times-Italic", label="&epsilon;"];
+s36 -> s5 [fontname="Times-Italic", label="&epsilon;"];
+s31 -> s32 [fontsize=11, fontname="Courier", arrowsize=.7, label = "{TIMES, DIV}", arrowhead = normal];
+s32 -> s34 [fontsize=11, fontname="Courier", arrowsize=.7, label = "<factor>", arrowhead = normal];
+s34 -> s37 [fontname="Times-Italic", label="&epsilon;"];
+s37 -> s35 [fontname="Times-Italic", label="&epsilon;", style="dashed"];
+}
