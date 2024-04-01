@@ -1,0 +1,23 @@
+digraph ATN {
+rankdir=LR;
+s13[fontsize=11, label="13", shape=doublecircle, fixedsize=true, width=.6];
+s72[fontsize=11,label="72", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s73[fontsize=11,label="73", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s74[fontsize=11,label="74", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s75[fontsize=11,label="75", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s12[fontsize=11,label="12", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s76[fontsize=11,label="76", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s77[fontsize=11,label="77", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s78[fontsize=11,label="{&rarr;\n78\nd=5|{<p0>|<p1>}}", shape=record, fixedsize=false, peripheries=1];
+s79[fontsize=11,label="&larr;\n79", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s12 -> s72 [fontname="Times-Italic", label="&epsilon;"];
+s72 -> s73 [fontsize=11, fontname="Courier", arrowsize=.7, label = "SELECT", arrowhead = normal];
+s73 -> s74 [fontsize=11, fontname="Courier", arrowsize=.7, label = "'*'", arrowhead = normal];
+s74 -> s75 [fontsize=11, fontname="Courier", arrowsize=.7, label = "FROM", arrowhead = normal];
+s75 -> s78 [fontsize=11, fontname="Courier", arrowsize=.7, label = "ID", arrowhead = normal];
+s78:p0 -> s76 [fontname="Times-Italic", label="&epsilon;"];
+s78:p1 -> s79 [fontname="Times-Italic", label="&epsilon;"];
+s76 -> s77 [fontsize=11, fontname="Courier", arrowsize=.7, label = "WHERE", arrowhead = normal];
+s79 -> s13 [fontname="Times-Italic", label="&epsilon;"];
+s77 -> s79 [fontsize=11, fontname="Courier", arrowsize=.7, label = "<expression>", arrowhead = normal];
+}

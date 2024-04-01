@@ -1,0 +1,35 @@
+digraph ATN {
+rankdir=LR;
+s10[fontsize=11, label="10", shape=doublecircle, fixedsize=true, width=.6];
+s64[fontsize=11,label="&larr;\n64", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s65[fontsize=11,label="{65+\nd=6|{<p0>|<p1>}}", shape=record, fixedsize=false, peripheries=1];
+s66[fontsize=11,label="66", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s67[fontsize=11,label="67", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s68[fontsize=11,label="68", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s69[fontsize=11,label="&rarr;\n69+", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s70[fontsize=11,label="&larr;\n70", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s71[fontsize=11,label="{71+\nd=7|{<p0>|<p1>}}", shape=record, fixedsize=false, peripheries=1];
+s72[fontsize=11,label="72", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s9[fontsize=11,label="9", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s73[fontsize=11,label="{&rarr;\n73\nd=8|{<p0>|<p1>}}", shape=record, fixedsize=false, peripheries=1];
+s74[fontsize=11,label="&larr;\n74", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s62[fontsize=11,label="62", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s63[fontsize=11,label="&rarr;\n63+", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s9 -> s63 [fontname="Times-Italic", label="&epsilon;"];
+s63 -> s62 [fontname="Times-Italic", label="&epsilon;"];
+s62 -> s64 [fontsize=11, fontname="Courier", arrowsize=.7, label = "'0'..'9'", arrowhead = normal];
+s64 -> s65 [fontname="Times-Italic", label="&epsilon;"];
+s65:p0 -> s63 [fontname="Times-Italic", label="&epsilon;", style="dashed"];
+s65:p1 -> s66 [fontname="Times-Italic", label="&epsilon;"];
+s66 -> s73 [fontname="Times-Italic", label="&epsilon;"];
+s73:p0 -> s67 [fontname="Times-Italic", label="&epsilon;"];
+s73:p1 -> s74 [fontname="Times-Italic", label="&epsilon;"];
+s67 -> s69 [fontsize=11, fontname="Courier", arrowsize=.7, label = "'.'", arrowhead = normal];
+s74 -> s10 [fontname="Times-Italic", label="&epsilon;"];
+s69 -> s68 [fontname="Times-Italic", label="&epsilon;"];
+s68 -> s70 [fontsize=11, fontname="Courier", arrowsize=.7, label = "'0'..'9'", arrowhead = normal];
+s70 -> s71 [fontname="Times-Italic", label="&epsilon;"];
+s71:p0 -> s69 [fontname="Times-Italic", label="&epsilon;", style="dashed"];
+s71:p1 -> s72 [fontname="Times-Italic", label="&epsilon;"];
+s72 -> s74 [fontname="Times-Italic", label="&epsilon;"];
+}

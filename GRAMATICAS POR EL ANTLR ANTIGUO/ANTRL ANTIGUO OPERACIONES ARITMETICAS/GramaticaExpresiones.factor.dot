@@ -1,0 +1,23 @@
+digraph ATN {
+rankdir=LR;
+s7[fontsize=11, label="7", shape=doublecircle, fixedsize=true, width=.6];
+s6[fontsize=11,label="6", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s38[fontsize=11,label="38", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s39[fontsize=11,label="39", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s40[fontsize=11,label="40", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s41[fontsize=11,label="&rarr;\n41*", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s42[fontsize=11,label="&larr;\n42", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s43[fontsize=11,label="{43*\nd=2|{<p0>|<p1>}}", shape=record, fixedsize=false, peripheries=1];
+s44[fontsize=11,label="44", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s45[fontsize=11,label="45*", shape=circle, fixedsize=true, width=.55, peripheries=1];
+s6 -> s38 [fontname="Times-Italic", label="&epsilon;"];
+s38 -> s43 [fontsize=11, fontname="Courier", arrowsize=.7, label = "<signedAtom>", arrowhead = normal];
+s43:p0 -> s41 [fontname="Times-Italic", label="&epsilon;"];
+s43:p1 -> s44 [fontname="Times-Italic", label="&epsilon;"];
+s41 -> s39 [fontname="Times-Italic", label="&epsilon;"];
+s44 -> s7 [fontname="Times-Italic", label="&epsilon;"];
+s39 -> s40 [fontsize=11, fontname="Courier", arrowsize=.7, label = "POW", arrowhead = normal];
+s40 -> s42 [fontsize=11, fontname="Courier", arrowsize=.7, label = "<signedAtom>", arrowhead = normal];
+s42 -> s45 [fontname="Times-Italic", label="&epsilon;"];
+s45 -> s43 [fontname="Times-Italic", label="&epsilon;", style="dashed"];
+}
